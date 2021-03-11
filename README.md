@@ -25,12 +25,13 @@
 genisoimage -output cidata.iso -volid cidata -joliet -rock user-data meta-data
 ```
 [这是链接](https://cvw.cac.cornell.edu/jetstreampub/imageconfig)
-5. 第四步有一个坑，就是不能自己在windows环境下用第三方软件做iso文件，那个iso文件不能完成无人值守的操作，只能在linux环境下使用genisoimage语句
-6. ![get_cidata](img/get_cidata.png),再把这个iso文件传出来，然后按要求配置好无人值守的环境，
-   ![configuration](img/configuration_iso.png)，
+5. 第四步有两个坑，第一个就是不能自己在windows环境下用第三方软件做iso文件，那个iso文件不能完成无人值守的操作，只能在linux环境下使用genisoimage语句，第二个就是漏了network-config文件，需要进行如下操作，基于与user-data类似，故只附上图片，不进行同样的描述![put](img/put-networkconfig.png),这是创建的语法过程![set](img/make-init.png)
+6. 再把这个iso文件传出来，然后按要求配置好无人值守的环境，
+   ![configuration](img/configuration2.png)，
    启动，终于看到这个问句基本上成功了![yes](img/yes_auto.png),不一会儿就装好了![finish](img/finish.png)
 
 ## 实验碰到的问题
 * 远程连接交换文件，总是被拒绝 解决：chown语句赋予权限
 * win10环境下第三方软件iso文件无效 解决：在Linux环境下使用genisoimage语句来做
+* 漏了网络配置文件network-config
    
