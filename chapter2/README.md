@@ -11,22 +11,22 @@
 
 ## 实验过程
 * [本次实验过程录制的视频](https://asciinema.org/~lsw666-gif)
-* 1.1--1.7 编辑文件以及保存文件: [1.1--1.7](https://asciinema.org/a/401140)
-* 2.1 -- 2.7 更多的删除技巧: [2.1 -- 2.7](https://asciinema.org/a/401142)
-* 3.1 跳转顺序: [3.1](https://asciinema.org/a/401152)
-* 3.2 -- 3.3 r和cw命令: [3.2 -- 3.3](https://asciinema.org/a/401157)
-* 3.4 直接修改更多命令: [3.4](https://asciinema.org/a/401161)
-* 4.1 跳转行的技巧: [4.1](https://asciinema.org/a/401169)
-* 4.2 利用搜索的技巧: [4.2](https://asciinema.org/a/401227)
-* 4.3 运用%实现字符串配对: [4.3](https://asciinema.org/a/401242)
-* 4.4 批量修改该行文档: [4.4](https://asciinema.org/a/401572)
-* 5.1 运用：！的方式，调用外部命令: [5.1](https://asciinema.org/a/401239)
-* 5.2 -- 5.3 创建文件以及复制粘贴文件: [5.2 -- 5.3](https://asciinema.org/a/401253)
-* 5.4 将外部文本直接移动到当前位置: [5.4](https://asciinema.org/a/401255)
-* 6.1 -- 6.3 更多的修改文本技巧: [6.1 -- 6.3](https://asciinema.org/a/401258)
-* 6.4 -- 6.5 用p复制粘贴文本和设置搜索选项: [6.4 -- 6.5](https://asciinema.org/a/401264)
-* 7.1 -- 7.2 获取帮助信息和创建启动脚本: [7.1 -- 7.2](https://asciinema.org/a/401267)
-* 7.3 TAB补全功能: [7.3](https://asciinema.org/a/401270)
+* 1.1--1.7 编辑文件以及保存文件: [![1.1--1.7](https://asciinema.org/a/401140.svg)](https://asciinema.org/a/401140)
+* 2.1 -- 2.7 更多的删除技巧: [![2.1 -- 2.7](https://asciinema.org/a/401142.svg)](https://asciinema.org/a/401142)
+* 3.1 跳转顺序: [![3.1](https://asciinema.org/a/401152.svg)](https://asciinema.org/a/401152)
+* 3.2 -- 3.3 r和cw命令: [![3.2 -- 3.3](https://asciinema.org/a/401157.svg)](https://asciinema.org/a/401157)
+* 3.4 直接修改更多命令: [![3.4](https://asciinema.org/a/401157.svg)](https://asciinema.org/a/401161)
+* 4.1 跳转行的技巧: [![4.1](https://asciinema.org/a/401169.svg)](https://asciinema.org/a/401169)
+* 4.2 利用搜索的技巧: [![4.2](https://asciinema.org/a/401227.svg)](https://asciinema.org/a/401227)
+* 4.3 运用%实现字符串配对: [![4.3](https://asciinema.org/a/401242.svg)](https://asciinema.org/a/401242)
+* 4.4 批量修改该行文档: [![4.4](https://asciinema.org/a/401572.svg)](https://asciinema.org/a/401572)
+* 5.1 运用：！的方式，调用外部命令: [![5.1](https://asciinema.org/a/401239.svg)](https://asciinema.org/a/401239)
+* 5.2 -- 5.3 创建文件以及复制粘贴文件: [![5.2 -- 5.3](https://asciinema.org/a/401253.svg)](https://asciinema.org/a/401253)
+* 5.4 将外部文本直接移动到当前位置: [![5.4](https://asciinema.org/a/401255.svg)](https://asciinema.org/a/401255)
+* 6.1 -- 6.3 更多的修改文本技巧: [![6.1 -- 6.3](https://asciinema.org/a/401258.svg)](https://asciinema.org/a/401258)
+* 6.4 -- 6.5 用p复制粘贴文本和设置搜索选项: [![6.4 -- 6.5](https://asciinema.org/a/401264.svg)](https://asciinema.org/a/401264)
+* 7.1 -- 7.2 获取帮助信息和创建启动脚本: [![7.1 -- 7.2](https://asciinema.org/a/401267.svg)](https://asciinema.org/a/401267)
+* 7.3 TAB补全功能: [![7.3](https://asciinema.org/a/401270.svg)](https://asciinema.org/a/401270)
 
 ## 实验碰到的问题
 * Lesson 4.4 按下s也会进入Insert状态，导致这一小部分难以进行
@@ -39,11 +39,11 @@
 4. u撤销最近一次编辑操作,ctrl+R重做最近一次被撤销的操作
 5. vim中yl，yh实现剪切粘贴单个字符，yw单个单词,yy单行,.实现相似的复制粘贴操作
 6. x,i,a,o,s,r,w,p,c
-7. 在文件中最近编辑过的位置来回快速跳转的方法:光标历史位置往前（旧）调ctrl+i,光标历史位置往后（新）调ctrl+o
-8. 批量替换：比如:s/thee/the（/g）
+7. 在文件中最近编辑过的位置来回快速跳转的方法:光标历史位置往前（旧）调ctrl+i,光标历史位置往后（新）调```ctrl+o```
+8. 批量替换：比如:```s/thee/the（/g）```
 9. %把光标定位到各种括号的匹配项？例如：找到(, [, or {对应匹配的),], or }
 10. 加！可以执行外部命令
-11. :help w使用vim的内置帮助系统来查询一个内置默认快捷键的使用方法；CTRL+W hjkl，光标在不同的分屏中移动，CTRL+W HJKL，将光标所在的分屏移动到最左/下/上/右
+11. ```:help w```使用vim的内置帮助系统来查询一个内置默认快捷键的使用方法；```CTRL+W hjkl```，光标在不同的分屏中移动，```CTRL+W HJKL```，将光标所在的分屏移动到最左/下/上/右
 12. 关键词搜索：/关键词
 
 
