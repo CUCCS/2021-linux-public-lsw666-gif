@@ -35,11 +35,14 @@
 1. 如何添加一个用户并使其具备sudo执行程序的权限?
   sudo adduser demo 
   sudo usermod -G sudo -a demo
+
 2. 如何将一个用户添加到一个用户组?
   sudo usermod -a -G groupname username
+
 3. 如何查看当前系统的分区表和文件系统详细信息
   df -T -h (查看挂载的文件系统详细信息)
   sudo fdisk -l （显示各分区大小）
+
 4. 如何实现开机自动挂载Virtualbox的共享目录分区：
    [此题参考链接](https://blog.csdn.net/hexf9632/article/details/93774198)
     1. 在windows下创建一个共享文件夹
@@ -48,9 +51,10 @@
     4. 新建Ubuntu共享文件夹  ```sudo mkdir /mnt/dirname ```
     5. 执行挂载命令 ```sudo mount -t vboxsf [第一步共享文件夹名称] /mnt/dirname```
     6. 修改 /etc/fstab 文件 在文末添加```[Windows共享文件夹名称] /mnt/dirname/ vboxsf defaults 0 0```即可完成开机自动挂载
+   
 5. 基于LVM的分区如何实现动态扩容和缩减容量
   [此题参考链接](https://blog.csdn.net/weixin_34044273/article/details/92033124) 
-  1.首先得创建一个lvm
+  1. 首先得创建一个lvm
     1.制作VG
     pvcreate  /dev/vdb1
     2.制作VG（卷组）
@@ -59,17 +63,26 @@
     lvcreate   -n  lv1  -L  3G vg1
     4.格式化mkfs.ext4 /dev/vg1/lv1
     5.挂载mount  /dev/vg1/lv1   /opt/
-  2.动态扩容
+  2. 动态扩容
     逻辑卷扩展：lvextend   -L   +300M     /dev/vg1/lv1
     resize2fs   /dev/vg1/lv1     扩展文件系统
-  3.缩减容量
+  3. 缩减容量
     1、先卸载umount   /opt/                   #卸载不影响里面的资料
     2、e2fsck    -f   /dev/vg1/lv1            #检查文件系统是否正常工作
     如：将10G缩减到8G
     resize2fs      /dev/vg1/lv1    8G           #这个8G指的是缩小后的大小
     lvreduce   -L    8G   /dev/vg1/lv1
     mount    /dev/vg1/lv1  /opt/                  #挂载后发现里面的数据依然还在
-  
+
+6. 如何通过systemd设置实现在网络连通时运行一个指定脚本，在网络断开时运行另一个脚本？
+    修改systemd-networkd中的Service
+	  ExecStartPost=网络联通时运行的指定脚本
+    ExecStopPost=网络断开时运行的另一个脚本
+    
+7. 如何通过systemd设置实现一个脚本在任何情况下被杀死之后会立即重新启动？实现杀不死？
+    sudo systemctl vi scriptname
+    Restart = always
+    sudo systemctl daemon-reload
 
 
 
