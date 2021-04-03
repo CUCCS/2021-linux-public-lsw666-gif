@@ -28,20 +28,20 @@
 
 ## 实验碰到的问题
 * 3.5中修改时间时，如果直接修改是不行的，因为系统默认同步时间；必须先关闭同步时间ntf=no可以解决
-* 4.2中systemctl -H root@rhel7.example.com status httpd.service，root@rhel7.example.com要改成cuc@192.168.56.101
+* 4.2中```systemctl -H root@rhel7.example.com status httpd.service，root@rhel7.example.com```要改成cuc@192.168.56.101
 * 有的服务我是没有的，如httpd.service，可以用ufw.service.
 
 ## 自查清单
 1. 如何添加一个用户并使其具备sudo执行程序的权限?
-  sudo adduser demo 
-  sudo usermod -G sudo -a demo
+  ```sudo adduser demo``` 
+  ```sudo usermod -G sudo -a demo```
 
 2. 如何将一个用户添加到一个用户组?
-  sudo usermod -a -G groupname username
+  ```sudo usermod -a -G groupname username```
 
 3. 如何查看当前系统的分区表和文件系统详细信息
-  df -T -h (查看挂载的文件系统详细信息)
-  sudo fdisk -l （显示各分区大小）
+  ```df -T -h (查看挂载的文件系统详细信息)```
+  ```sudo fdisk -l （显示各分区大小）```
 
 4. 如何实现开机自动挂载Virtualbox的共享目录分区：
    [此题参考链接](https://blog.csdn.net/hexf9632/article/details/93774198)
@@ -55,24 +55,24 @@
 5. 基于LVM的分区如何实现动态扩容和缩减容量
   [此题参考链接](https://blog.csdn.net/weixin_34044273/article/details/92033124) 
   1. 首先得创建一个lvm
-    1.制作VG
-    pvcreate  /dev/vdb1
-    2.制作VG（卷组）
-    vgcreate  vg1 /dev/vdb1
-    3.制作LV（逻辑卷）
-    lvcreate   -n  lv1  -L  3G vg1
-    4.格式化mkfs.ext4 /dev/vg1/lv1
-    5.挂载mount  /dev/vg1/lv1   /opt/
+     1. 制作VG
+     ```pvcreate  /dev/vdb1```
+     2. 制作VG（卷组）
+     ```vgcreate  vg1 /dev/vdb1```
+     3. 制作LV（逻辑卷）
+    ```lvcreate   -n  lv1  -L  3G vg1```
+     4. 格式化```mkfs.ext4 /dev/vg1/lv1```
+     5. 挂载```mount  /dev/vg1/lv1   /opt/```
   2. 动态扩容
-    逻辑卷扩展：lvextend   -L   +300M     /dev/vg1/lv1
-    resize2fs   /dev/vg1/lv1     扩展文件系统
+    逻辑卷扩展：```lvextend   -L   +300M     /dev/vg1/lv1```
+    ```resize2fs   /dev/vg1/lv1     扩展文件系统```
   3. 缩减容量
-    1、先卸载umount   /opt/                   #卸载不影响里面的资料
-    2、e2fsck    -f   /dev/vg1/lv1            #检查文件系统是否正常工作
+    1. 先卸载```umount   /opt/```                   #卸载不影响里面的资料
+    2. ```e2fsck    -f   /dev/vg1/lv1```            #检查文件系统是否正常工作
     如：将10G缩减到8G
-    resize2fs      /dev/vg1/lv1    8G           #这个8G指的是缩小后的大小
-    lvreduce   -L    8G   /dev/vg1/lv1
-    mount    /dev/vg1/lv1  /opt/                  #挂载后发现里面的数据依然还在
+    ```resize2fs      /dev/vg1/lv1    8G ```          #这个8G指的是缩小后的大小
+    ```lvreduce   -L    8G   /dev/vg1/lv1```
+    ```mount    /dev/vg1/lv1  /opt/ ```                 #挂载后发现里面的数据依然还在
 
 6. 如何通过systemd设置实现在网络连通时运行一个指定脚本，在网络断开时运行另一个脚本？
     修改systemd-networkd中的Service
