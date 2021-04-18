@@ -38,11 +38,11 @@
 ### 2. 下载imagemagick，```sudo apt-get update && sudo apt-get install imagemagick```
 ### 3. 然后进行一系列的操作
 ### 4. 这是任务一的结果与操作：
-    ![task1](img/task1.png)
+![task1](img/task1.png)
 ### 5. 这是任务二的结果与操作：
-    ![task2](img/task2.png)  
+![task2](img/task2.png)  
 ### 6. 这是任务三的结果与操作（略显冗余）：
-    ![task3](img/task3.png)
+![task3](img/task3.png)
    
 
 ## 过程中遇到的问题
